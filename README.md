@@ -1,65 +1,67 @@
-# Phase 1 Project
+# Arnold Mochama Phase 1 Project
 
-You've made it all the way through the first phase of this course - take a minute to celebrate your awesomeness!
-
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-1-project/master/awesome.gif)
-
-Now you will put your new skills to use with a large end-of-Phase project! This project should take 20 to 30 hours to complete.
-
-## Project Overview
-
-For this project, you will use exploratory data analysis to generate insights for a business stakeholder.
-
-### Business Problem
-
+## Introduction
+The business question was ;
 Microsoft sees all the big companies creating original video content and they want to get in on the fun. They have decided to create a new movie studio, but they don’t know anything about creating movies. You are charged with exploring what types of films are currently doing the best at the box office. You must then translate those findings into actionable insights that the head of Microsoft's new movie studio can use to help decide what type of films to create.
 
-### The Data
+## Data Pre processing
+csv files were loaded from my local machine and read into a pandas dataframe. This was done after the necessary libraries were imported.
+The data was then explored using functions and methods such as .describe(), .shape(), .info(), .duplicated and .sum()
 
-In the folder `zippedData` are movie datasets from:
+## Data Cleaning
+After exploring the data, the data was cleaned. There were no duplicates values. However there were missing values. The missing values were dealt with in 2 ways namely;
+    a.)filled in missing values for example, missing data from the runtime_minutes column.
+    b.)dropping rows with missing columns.
 
-* [Box Office Mojo](https://www.boxofficemojo.com/)
-* [IMDB](https://www.imdb.com/)
-* [Rotten Tomatoes](https://www.rottentomatoes.com/)
-* [TheMovieDB](https://www.themoviedb.org/)
-* [The Numbers](https://www.the-numbers.com/)
+Ouliers in the Gross incomes were also checked.
+Necessary additional columns were added for example, total_movie_gross
 
-It is up to you to decide what data from this to use and how to use it. If you want to make this more challenging, you can scrape websites or make API calls to get additional data. If you are feeling overwhelmed or behind (e.g. struggled with the Phase 1 Code Challenge), we recommend you use only the following data files:
+## Data Visualisations
+Various visualisations were made starting with a box plot of runtime_minutes to check for the outliers.
+the outliers were then dropped and a histogram created to show the dirstribution of the runtime_minutes.
 
-* imdb.title.basics
-* imdb.title.ratings
-* bom.movie_gross
+Afterwards, a genre distribution Treemap was created to show the number of movies in various genres.
+The following Bar graphs were also plotted:
+    1.Top 5 Movie genres
+    2.Top 5 movie by total gross
+    3.Top 5 movie by domestic gross
+    4.Top 5 movie by foreign gross
+    5.Top 5 rated movie genres
+    6.Top 10 movies by Net Income
+    7.Top 10 movie genres with highest Net Income
 
-## Deliverables
+### Findings
+Most movies ran for just under 90 min, (but above 80 min) as seen on the histogram.
 
-There are three deliverables for this project:
+-Top 5 genres (most genres in the dataset): 1.Documentary 2.Drama 3.Comedy 4.Horror 5.Comedy, Drama
 
-* A **GitHub repository**
-* A **Jupyter Notebook**
-* A **non-technical presentation**
+-Top 5 movies with highest Total Gross Income: 1.Marvel's The Avengers 2.Avengers:Age of Ultron 3.Black Panther 4.Harry Potter and Deathly Hallows Part 2 5.Star Wars:The Last Jedi
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
+-Top 5 movies with highest Domestic Gross: 1.Star Wars:The force awakens 2.Black Panther 3.Avengers:Infinity War 4.Jurassic World 5.Marvel's The Avengers
 
-### Key Points
+-Top 5 movies with highest Foreign Gross: 1.Harry Potter and Deathly Hallows Part 2 2.Avengers:Age of Ultron 3.Marvel's The Avengers 4.Jurassic World:Fallen kingdom 5.Frozen
 
-* **Your analysis should yield three concrete business recommendations.** The ultimate purpose of exploratory analysis is not just to learn about the data, but to help an organization perform better. Explicitly relate your findings to business needs by recommending actions that you think the business (Microsoft) should take.
+## RESULTS FROM SAMPLED DATAFRAMES.
+                
+-Top 5 Highly Rated Movie Genres: 1.Comedy, Documentary, Fantasy 2.Documentary, Family, Musical 3.History, Sport 4.Music, Mystery 5.Game-show
 
-* **Communicating about your work well is extremely important.** Your ability to provide value to an organization - or to land a job there - is directly reliant on your ability to communicate with them about what you have done and why it is valuable. Create a storyline your audience (the head of Microsoft's new movie studio) can follow by walking them through the steps of your process, highlighting the most important points and skipping over the rest.
+-Top 5 Movies by Net Income: 1.Black Panther 2.Jurassic World:Fallen Kingdom 3.Frozen 4.Minions 5.Avengers:Age of Ultron
 
-* **Use plenty of visualizations.** Visualizations are invaluable for exploring your data and making your findings accessible to a non-technical audience. Spotlight visuals in your presentation, but only ones that relate directly to your recommendations. Simple visuals are usually best (e.g. bar charts and line graphs), and don't forget to format them well (e.g. labels, titles).
+-Top 5 Movie Genres by Net Income: 1.Fantasy,Romance 2.Adevnture, Drama, Sport 3.Biography, Documentary, Sport 4.Ducmentary, Drama, Sport 5.Sci-Fi
 
-## Getting Started
+### Conclusion
+From the analysis, the movie studio by Microsoft is a good business venture. Microsoft has to fit itself into the movie Industry and make data-driven decision to be able to make profit and come to be one among the top. Below are the recommendations.
 
-Please start by reviewing this assignment, the rubric at the bottom of it, and the "Project Submission & Review" page. If you have any questions, please ask your instructor ASAP.
+### Recommendations
+1.Microsoft movie studio should launch their studio by producing movies under the genres that were highly rated so as to captivate a lot of new audience.
 
-Next, we recommend you check out [the Phase 1 Project Templates and Examples repo](https://github.com/learn-co-curriculum/dsc-project-template) and use the MVP template for your project.
+2.Since it's a business, after settling in and putting it's name out there, Microsoft movie studio should then look into producing movies under the genres with highest Net Income.
 
-Alternatively, you can fork [the Phase 1 Project Repository](https://github.com/learn-co-curriculum/dsc-phase-1-project), clone it locally, and work in the `student.ipynb` file. Make sure to also add and commit a PDF of your presentation to your repository with a file name of `presentation.pdf`.
+3.From my findings, superhero movies do well so Microsoft movie studio should maybe start a Microsoft Superhero Series of movies. They should also do comics about the heroes so as to boost movie ratings.
 
-## Project Submission and Review
+4.Microsoft should also research on which novels are bestselling and form partnerships to produce movies of such books. From the analysis a Harry Potter film has made it to the list of high earning gross income.
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
+5.Microsoft should look into animation(under fantasy) and produce some animations. Animated movies are doing relatively well with Frozen being among Highest Foreign gross earners, and Frozen and Minions being among Highest Net income earners.
 
-## Summary
+6.Microsoft movie studio should make their movies around 90 minutes since most movies are about 90 minutes long.
 
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
